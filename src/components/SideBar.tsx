@@ -1,21 +1,58 @@
 "use client";
-import HomeIcon from "../../public/images/home-icon.png"
-import VideoIcon from "../../public/images/video-icon.png"
-import MusicIcon from "../../public/images/music-icon.png"
-import DownloadIcon from "../../public/images/download-icon.png"
-import ChromecastIcon from "../../public/images/chromecast-icon.png"
-import StarIcon from "../../public/images/star-icon.png"
-import MenuIcon from "../../public/images/menu-icon.png"
-import { Flex, Icon, VStack, Spacer, Image} from "@chakra-ui/react";
 
+import { Flex, Icon, VStack, Spacer, Image } from "@chakra-ui/react";
+import { ImVideoCamera } from "react-icons/im";
+import { CiMusicNote1, CiStar } from "react-icons/ci";
+import { MdOutlineFileDownload } from "react-icons/md";
+import { FaChromecast } from "react-icons/fa";
+import { TbSmartHome } from "react-icons/tb";
+import { IoMenu } from "react-icons/io5";
+const IconsArr = [
+  {
+    id: 1,
+    name: TbSmartHome,
+  },
+  {
+    id: 2,
+    name: ImVideoCamera,
+  },
+  {
+    id: 3,
+    name: CiMusicNote1,
+  },
+  {
+    id: 4,
+    name: MdOutlineFileDownload,
+  },
+  {
+    id: 5,
+    name: FaChromecast,
+  },
+  {
+    id: 6,
+    name: CiStar,
+  },
+];
 export default function SideBar() {
   return (
-    <Flex direction="column">
-      <VStack>
-        <Image src="../../public/images/home-icon.png"/>
-      </VStack>
+    <Flex
+      pos="absolute"
+      h={"520px"}
+      direction="column"
+      alignItems="center"
+      justify="space-between"
+      gap={"30px"}
+      mt={"70px"}
+    >
+      {IconsArr?.map((icon) => (
+        <Flex key={icon.id}>
+          <VStack spacing="20px">
+            <Icon h="26px" w="26px" color="white" as={icon.name} />
+          </VStack>
+        </Flex>
+      ))}
       <Spacer />
-      <Icon />
+      <Icon h="26px" w="26px" color="white" as={IoMenu} />
     </Flex>
   );
 }

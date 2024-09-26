@@ -1,9 +1,22 @@
-import Data from "@/components/Data";
+import MovieLists from "@/components/Data";
+import Hero from "@/components/Hero";
+import { Box } from "@chakra-ui/react";
+import { getMovie } from "./lib/get-services";
+import Nav from "@/components/Nav";
+// import Swipe from "@/components/Swiper";
+import MovieSection from "@/components/MovieSection";
 
-export default function Home() {
+async function Home() {
+  const movies = await getMovie();
+  const { results } = movies;
+  console.log(results);
+
   return (
-    <div>
-      <Data />
-    </div>
+    <Box width={"100%"}>
+      {/* <Nav /> */}
+      <Hero />
+      <MovieSection results={results} />
+    </Box>
   );
 }
+export default Home;
