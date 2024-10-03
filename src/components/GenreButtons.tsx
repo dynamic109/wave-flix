@@ -1,20 +1,13 @@
 import { Flex, Button } from "@chakra-ui/react";
+import { RiArrowRightFill } from "react-icons/ri";
 
-export default function GenreButtons() {
-  const GenreArr = [
-    { id: 1, name: "Action" },
-    { id: 1, name: "Adventure" },
-    { id: 1, name: "Animation" },
-    { id: 1, name: "Fiction" },
-    { id: 1, name: "Heroes" },
-    { id: 1, name: "Comedy" },
-  ];
+export default function GenreButtons({genresData} : any) {
   return (
-    <Flex>
-      {GenreArr?.map((genre) => (
-        <Flex key={genre.id}>
+    <Flex display={"flex"} flexWrap={"wrap"} alignItems={"center"}>
+      {genresData?.genres.map((genre: any) => (
+        <Flex key={genre.id} mb={"20px"}>
           <Button
-            p={"6px 40px"}
+            p={{ sm: "3px 20px", md: "6px 40px" }}
             borderRadius={"64"}
             fontSize={"12px"}
             mr={{ sm: "10px", md: "25px" }}
@@ -25,6 +18,7 @@ export default function GenreButtons() {
           </Button>
         </Flex>
       ))}
+      <RiArrowRightFill size={25} color="white" />
     </Flex>
   );
 }

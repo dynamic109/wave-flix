@@ -4,7 +4,6 @@ import { Image } from "@chakra-ui/next-js";
 import {
   Avatar,
   AvatarGroup,
-  Box,
   Flex,
   HStack,
   Icon,

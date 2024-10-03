@@ -37,11 +37,11 @@ export default function SideBar() {
   return (
     <Flex
       pos="absolute"
-      h={"520px"}
+      h={{ sm: "420px", lg: "520px" }}
       direction="column"
       alignItems="center"
       justify="space-between"
-      gap={"30px"}
+      gap={{ sm: "20px", md: "30px" }}
       mt={"70px"}
     >
       {IconsArr?.map((icon) => (

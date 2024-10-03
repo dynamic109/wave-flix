@@ -6,3 +6,12 @@ export async function getMovie() {
 
   return data;
 }
+
+export async function getGenre() {
+  let response = await fetch(
+    "https://api.themoviedb.org/3/genre/movie/list?api_key=32d4bcbb46f15adafa990e0388136466"
+  );
+  const genre = await response.json();
+
+  return genre;
+}

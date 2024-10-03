@@ -1,21 +1,48 @@
-import { Box, Container, SimpleGrid } from "@chakra-ui/react";
+"use client";
 import MovieCard from "./MovieCard";
-
-async function MovieLists({ data }: any) {
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+function MovieLists({ data }: any) {
   return (
-    <Container maxW={"400px"}>
-      <SimpleGrid columns={{ base: 1, md: 3 }}>
+    <>
+      <Swiper
+        slidesPerView={3}
+        centeredSlides={false}
+        spaceBetween={30}
+        grabCursor={true}
+        modules={[Pagination]}
+        breakpoints={{
+          // Responsive breakpoints
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 7,
+            spaceBetween: 30,
+          },
+        }}
+        className="mySwiper"
+      >
         {data.map((movie: any, index: number) => (
-          <Box key={index}>
+          <SwiperSlide key={index}>
             <MovieCard
-              color={index === 0 ? "blue" : "#000"}
+              color={"white"}
               image={movie.poster_path}
               title={movie.title}
+              year={movie.release_date}
+              rate={movie.vote_average}
             />
-          </Box>
+          </SwiperSlide>
         ))}
-      </SimpleGrid>
-    </Container>
+      </Swiper>
+    </>
   );
 }
 export default MovieLists;

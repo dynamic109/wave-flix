@@ -1,62 +1,59 @@
 "use client";
-import { Box, Stack, Text } from "@chakra-ui/react";
-import React from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Box, HStack, Stack, Text, Image } from "@chakra-ui/react";
+import { useState } from "react";
+import { FaHeart, FaStar } from "react-icons/fa";
+import { IoMdEye } from "react-icons/io";
 
 export default function MovieCard({
   image,
   title,
+  year,
   color,
+  rate,
 }: {
   image: string;
   title: string;
+  year: any;
   color: string;
+  rate: number;
 }) {
-  return (
-    // <Stack mt={"50px"}>
-    //   <Box flex={"2"} color={"white"}>
-    //     <Image
-    //       src={`https://image.tmdb.org/t/p/w500${image}`}
-    //       alt={title}
-    //       width={200}
-    //       height={400}
-    //     />
-    //   </Box>
-    //   <Text color={color}>{title}</Text>
-    // </Stack>
+  const [isFavorite, setIsFavorite] = useState(false);
 
-    <Box>
-      <Swiper
-        slidesPerView={1}
-        centeredSlides={true}
-        spaceBetween={30}
-        grabCursor={true}
-        modules={[Pagination]}
-        className="mySwiper"
+  function toggle() {
+    setIsFavorite(!isFavorite);
+  }
+
+  return (
+    <Stack mt={"50px"}>
+      <Box flex={"2"} color={"white"} width={"100%"}>
+        <Image
+          src={`https://image.tmdb.org/t/p/w500${image}`}
+          alt={title}
+          width={{ sm: "122px", md: "182px" }}
+          height={{ sm: "211px", md: "271px" }}
+          objectFit={"cover"}
+        />
+      </Box>
+      <Text color={color} fontSize={{ sm: "10px", md: "13px" }}>
+        {title.length <= 20 ? title : `${title.slice(0, 19)}...`}
+      </Text>
+      <Stack
+        direction={"row"}
+        spacing={{ sm: "7px", md: "10px" }}
+        fontSize={"10px"}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        <SwiperSlide>Slide 10</SwiperSlide>
-        <SwiperSlide>Slide 12</SwiperSlide>
-        <SwiperSlide>Slide 13</SwiperSlide>
-        <SwiperSlide>Slide 14</SwiperSlide>
-        <SwiperSlide>Slide 15</SwiperSlide>
-        <SwiperSlide>Slide 16</SwiperSlide>
-        <SwiperSlide>Slide 17</SwiperSlide>
-        <SwiperSlide>Slide 18</SwiperSlide>
-        <SwiperSlide>Slide 19</SwiperSlide>
-      </Swiper>
-    </Box>
+        <Text color={"#B4B4B4"}>{year.slice(0, 4)}</Text>
+        <FaHeart
+          size={"14px"}
+          onClick={toggle}
+          fill={isFavorite ? "#DA0014" : "white"}
+        />
+        <IoMdEye size={"16px"} fill="white" />
+        <Box display={"flex"} justifyContent="right" alignItems={"center"}>
+          <FaStar size={16} color="#F5D835" />
+          <Text color="#F5D835">{rate.toFixed(1)}</Text>
+        </Box>
+      </Stack>
+    </Stack>
   );
 }

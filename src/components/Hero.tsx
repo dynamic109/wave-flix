@@ -3,7 +3,6 @@
 import { SearchIcon } from "@chakra-ui/icons";
 import {
   Flex,
-  VStack,
   Input,
   InputGroup,
   InputLeftElement,
@@ -17,9 +16,10 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { FaPlay } from "react-icons/fa";
-import { FiPlus } from "react-icons/fi";
 import Nav from "./Nav";
 import SideBar from "./SideBar";
+import PlayBtn from "./PlayBtn";
+import MovieListBtn from "./MovieListBtn";
 
 export default function Hero() {
   return (
@@ -74,22 +74,8 @@ export default function Hero() {
               morbi.
             </Text>
             <HStack>
-              <Button
-                bg="#00ADEF"
-                color={"white"}
-                leftIcon={<FaPlay />}
-                colorScheme="blue.700"
-              >
-                Play
-              </Button>
-              <Button
-                color="white"
-                colorScheme="white"
-                bg=""
-                leftIcon={<FiPlus />}
-              >
-                My List
-              </Button>
+              <PlayBtn text={"Play"} />
+              <MovieListBtn />
             </HStack>
           </Stack>
 

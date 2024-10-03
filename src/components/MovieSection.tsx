@@ -1,38 +1,41 @@
+"use client";
 import {
   Tabs,
   TabList,
-  Tab,
   TabPanels,
   TabPanel,
   Text,
-  TabIndicator,
+  Tab,
+  Icon,
+  Box,
 } from "@chakra-ui/react";
 import GenreButtons from "./GenreButtons";
 import MovieLists from "./Data";
-import { FaArrowTrendUp, FaStar } from "react-icons/fa6";
-import { FiPlus } from "react-icons/fi";
-import { SiFireship } from "react-icons/si";
 
-export default function MovieSection({ results }: any) {
+const MovieSection = ({ results, TabsData, genres }: any) => {
+  function isRecentlyAdded(releaseDate: any): boolean {
+    const today = new Date();
+    const release = new Date(releaseDate);
+    const daysDifference =
+      (today.getTime() - release.getTime()) / (1000 * 3600 * 24);
+
+    return daysDifference <= 60;
+  }
+
   return (
-    <Tabs mx={{ sm: "30px", md: "136px" }} my={"51px"}>
-      <TabList borderBottom={"1px solid #6A6A6A"}>
-        <Tab color={"white"}>
-          <FaArrowTrendUp fill="white" width="30px" height="24px" />
-          <Text ml={{ sm: "5px", md: "10px" }}>Trending</Text>
-        </Tab>
-        <Tab color={"white"}>
-          <SiFireship fill="white" width="30px" height="24px" />
-          <Text ml={{ sm: "5px", md: "10px" }}>Popular</Text>
-        </Tab>
-        <Tab color={"white"}>
-          <FiPlus fill="white" width="30px" height="24px" />
-          <Text ml={{ sm: "5px", md: "10px" }}>Recently added</Text>
-        </Tab>
-        <Tab color={"white"}>
-          <FaStar fill="white" width="30px" height="24px" />
-          <Text ml={{ sm: "5px", md: "10px" }}>Premium</Text>
-        </Tab>
+    <Tabs my={"51px"}>
+      <TabList
+        borderBottom={"1px solid #6A6A6A"}
+        mx={{ sm: "10px", md: "136px" }}
+      >
+        {TabsData.map((datas: any) =>
+          datas.TabDetails.map((data: any) => (
+            <Tab color={"white"} key={data.name}>
+              <Icon as={data.icon} />
+              <Text ml={{ sm: "5px", md: "10px" }}>{data.name}</Text>
+            </Tab>
+          ))
+        )}
       </TabList>
 
       {/* <TabIndicator
@@ -45,22 +48,40 @@ export default function MovieSection({ results }: any) {
 
       <TabPanels mt={"42px"}>
         <TabPanel>
-          <GenreButtons />
+          <Box mx={{ sm: "10px", md: "136px" }}>
+            <GenreButtons genresData={genres} />
+          </Box>
           <MovieLists data={results} />
         </TabPanel>
         <TabPanel>
-          <GenreButtons />
-          <p>two!</p>
+          <Box mx={{ sm: "10px", md: "136px" }}><GenreButtons /></Box>
+          {
+            <MovieLists
+              data={results.filter((movie: any) => movie.popularity > 1000)}
+            />
+          }
         </TabPanel>
         <TabPanel>
-          <GenreButtons />
-          <p>three!</p>
+          <Box mx={{ sm: "30px", md: "136px" }}>
+            <GenreButtons />
+          </Box>
+          {
+            <MovieLists
+              data={results.filter((movie: any) =>
+                isRecentlyAdded(movie.release_date)
+              )}
+            />
+          }
         </TabPanel>
         <TabPanel>
-          <GenreButtons />
-          <p>four!</p>
+          <Box mx={{ sm: "30px", md: "136px" }}>
+            <GenreButtons />
+          </Box>
+          <MovieLists data={results} />
         </TabPanel>
       </TabPanels>
     </Tabs>
   );
-}
+};
+
+export default MovieSection;
