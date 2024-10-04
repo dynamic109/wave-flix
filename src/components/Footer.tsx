@@ -2,7 +2,6 @@ import {
   Container,
   Flex,
   Heading,
-  Icon,
   Input,
   InputGroup,
   InputRightElement,

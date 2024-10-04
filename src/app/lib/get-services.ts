@@ -1,5 +1,5 @@
 export async function getMovie() {
-  let res = await fetch(
+  const res = await fetch(
     "https://api.themoviedb.org/3/discover/movie?api_key=32d4bcbb46f15adafa990e0388136466"
   );
   const data = await res.json();
@@ -8,7 +8,7 @@ export async function getMovie() {
 }
 
 export async function getGenre() {
-  let response = await fetch(
+  const response = await fetch(
     "https://api.themoviedb.org/3/genre/movie/list?api_key=32d4bcbb46f15adafa990e0388136466"
   );
   const genre = await response.json();

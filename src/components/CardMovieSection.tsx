@@ -15,8 +15,14 @@ import MovieCard from "./MovieCard";
 import { TabsData } from "@/app/lib/movie-tab-utils";
 
 import GenreButtons from "./GenreButtons";
+ 
+// interface MovieData {
+//   image: string;
+//   year: 
 
-export default function CardMovieSection({ results, genres }: any) {
+// }
+
+export default function CardMovieSection({ results, genres }: {results : any, genres: any}) {
   return (
     <Flex
       gap={"20px"}
@@ -44,6 +50,7 @@ export default function CardMovieSection({ results, genres }: any) {
             <Flex justifyContent={"space-evenly"} flexWrap={"wrap"}>
               {results.map((movie: any, index: number) => (
                 <MovieCard
+                  key={index}
                   color={"white"}
                   image={movie.poster_path}
                   title={movie.title}
@@ -55,11 +62,12 @@ export default function CardMovieSection({ results, genres }: any) {
           </TabPanel>
           <TabPanel>
             <Box>
-              <GenreButtons />
+              <GenreButtons genresData={genres} />
             </Box>
             <Flex justifyContent={"space-evenly"} flexWrap={"wrap"}>
               {results.map((movie: any, index: number) => (
                 <MovieCard
+                  key={index}
                   color={"white"}
                   image={movie.poster_path}
                   title={movie.title}
@@ -71,11 +79,12 @@ export default function CardMovieSection({ results, genres }: any) {
           </TabPanel>
           <TabPanel>
             <Box>
-              <GenreButtons />
+              <GenreButtons genresData={genres} />
             </Box>
             <Flex justifyContent={"space-evenly"} flexWrap={"wrap"}>
               {results.map((movie: any, index: number) => (
                 <MovieCard
+                  key={index}
                   color={"white"}
                   image={movie.poster_path}
                   title={movie.title}
@@ -87,11 +96,12 @@ export default function CardMovieSection({ results, genres }: any) {
           </TabPanel>
           <TabPanel>
             <Box>
-              <GenreButtons />
+              <GenreButtons genresData={genres} />
             </Box>
             <Flex flexWrap={"wrap"} justifyContent={"space-evenly"}>
               {results.map((movie: any, index: number) => (
                 <MovieCard
+                  key={index}
                   color={"white"}
                   image={movie.poster_path}
                   title={movie.title}

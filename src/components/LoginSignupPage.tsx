@@ -98,7 +98,7 @@ export default function LoginSignupPage({
           {text}
         </Button>
         <Text>
-          Don't you have an account?
+          Do not you have an account?
           <Link color="#00ADEF" href="/signup">
             Sign Up
           </Link>

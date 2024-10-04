@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Icon, VStack, Spacer, Image } from "@chakra-ui/react";
+import { Flex, Icon, VStack, Spacer } from "@chakra-ui/react";
 import { ImVideoCamera } from "react-icons/im";
 import { CiMusicNote1, CiStar } from "react-icons/ci";
 import { MdOutlineFileDownload } from "react-icons/md";

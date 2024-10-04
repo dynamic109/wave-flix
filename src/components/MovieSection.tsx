@@ -11,9 +11,35 @@ import {
 } from "@chakra-ui/react";
 import GenreButtons from "./GenreButtons";
 import MovieLists from "./Data";
+import { IconType } from "react-icons";
 
-const MovieSection = ({ results, TabsData, genres }: any) => {
-  function isRecentlyAdded(releaseDate: any): boolean {
+interface Movie {
+  id: number;
+  title: string;
+  poster_path: string;
+  release_date: string;
+  vote_average: number;
+  popularity: number;
+}
+
+interface Genre {
+  id: number;
+  name: string;
+}
+
+interface MovieSectionProps {
+  results: Movie[];
+  TabsData: {
+    TabDetails: {
+      name: string;
+      icon: IconType; // Specify a more precise type if possible
+    }[];
+  }[];
+  genres: Genre[];
+}
+
+const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
+  function isRecentlyAdded(releaseDate: string): boolean {
     const today = new Date();
     const release = new Date(releaseDate);
     const daysDifference =
@@ -28,8 +54,8 @@ const MovieSection = ({ results, TabsData, genres }: any) => {
         borderBottom={"1px solid #6A6A6A"}
         mx={{ sm: "10px", md: "136px" }}
       >
-        {TabsData.map((datas: any) =>
-          datas.TabDetails.map((data: any) => (
+        {TabsData.map((datas) =>
+          datas.TabDetails.map((data) => (
             <Tab color={"white"} key={data.name}>
               <Icon as={data.icon} />
               <Text ml={{ sm: "5px", md: "10px" }}>{data.name}</Text>
@@ -37,14 +63,6 @@ const MovieSection = ({ results, TabsData, genres }: any) => {
           ))
         )}
       </TabList>
-
-      {/* <TabIndicator
-        mt={"-6.5px"}
-        w="8px"
-        h="8px"
-        bg="blue.500"
-        borderRadius="full"
-      /> */}
 
       <TabPanels mt={"42px"}>
         <TabPanel>
@@ -54,28 +72,26 @@ const MovieSection = ({ results, TabsData, genres }: any) => {
           <MovieLists data={results} />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ sm: "10px", md: "136px" }}><GenreButtons /></Box>
-          {
-            <MovieLists
-              data={results.filter((movie: any) => movie.popularity > 1000)}
-            />
-          }
-        </TabPanel>
-        <TabPanel>
-          <Box mx={{ sm: "30px", md: "136px" }}>
-            <GenreButtons />
+          <Box mx={{ sm: "10px", md: "136px" }}>
+            <GenreButtons genresData={genres} />
           </Box>
-          {
-            <MovieLists
-              data={results.filter((movie: any) =>
-                isRecentlyAdded(movie.release_date)
-              )}
-            />
-          }
+          <MovieLists
+            data={results.filter((movie) => movie.popularity > 1000)}
+          />
         </TabPanel>
         <TabPanel>
           <Box mx={{ sm: "30px", md: "136px" }}>
-            <GenreButtons />
+            <GenreButtons genresData={genres} />
+          </Box>
+          <MovieLists
+            data={results.filter((movie) =>
+              isRecentlyAdded(movie.release_date)
+            )}
+          />
+        </TabPanel>
+        <TabPanel>
+          <Box mx={{ sm: "30px", md: "136px" }}>
+            <GenreButtons genresData={genres} />
           </Box>
           <MovieLists data={results} />
         </TabPanel>

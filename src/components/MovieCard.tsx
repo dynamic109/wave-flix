@@ -1,5 +1,5 @@
 "use client";
-import { Box, HStack, Stack, Text, Image } from "@chakra-ui/react";
+import { Box, Stack, Text, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";

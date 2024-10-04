@@ -7,6 +7,7 @@ export default function page() {
       email={"Email"}
       password={"Password"}
       isLoginPage={true}
+      isSignupPage={false}
     />
   );
 }

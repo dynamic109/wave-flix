@@ -27,7 +27,6 @@ async function Home() {
       />
       <CardMovieSection
         results={results}
-        TabsData={SecondTabsData}
         genres={genres}
       />
       <RecentMovie />
