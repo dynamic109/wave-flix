@@ -17,7 +17,7 @@ async function Home() {
   console.log(genres);
 
   return (
-    <Box width={"100%"}>
+    <Box width={"100%"} bg={"black"}>
       <Hero />
       <MovieSection results={results} TabsData={TabsData} genres={genres} />
       <MovieSection
