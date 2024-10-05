@@ -12,7 +12,7 @@ body {
   background-image: url("../pacific-rim-image.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100svh;
   width: 100%;
 }
 .login-background {

@@ -23,17 +23,21 @@ import MovieListBtn from "./MovieListBtn";
 
 export default function Hero() {
   return (
-    <Box pb={{ md: "50px" }} className="background-image" flexDir="column">
+    <Stack
+      pb={{ sm: "10px", md: "50px" }}
+      className="background-image"
+      direction="column"
+    >
       <Nav />
       <SideBar />
-      <Container maxWidth={{ md: "1500px" }}>
+      <Container maxWidth={{ sm: "100%", md: "1500px" }}>
         <Flex
           gap={"20px"}
-          py="120px"
+          py={{ sm: "80px", md: "120px" }}
           direction="column"
-          h="350px"
+          h={{ sm: "max-content", md: "350px" }}
           color="white"
-          px="60px"
+          px={{ sm: "50px", md: "60px" }}
         >
           <InputGroup
             gap={"14px"}
@@ -50,22 +54,27 @@ export default function Hero() {
 
           <Spacer />
 
-          <Stack fontSize={{ sm: "10px", md: "14px" }}>
-            <Text>ACTION - SCIENCE FICTION</Text>
+          <Stack>
+            <Text fontSize={{ sm: "5px", md: "14px" }}>
+              ACTION - SCIENCE FICTION
+            </Text>
             <Heading
               fontFamily={"New Amsterdam"}
               letterSpacing={"widest"}
-              fontSize={{ base: "40px", md: "50px" }}
+              fontSize={{ sm: "18px", md: "50px" }}
             >
               PACIFIC RIM
             </Heading>
-            <HStack>
+            <Stack direction={"row"} fontSize={{ sm: "10px", md: "14px" }}>
               <Text>Year |</Text>
               <Text>Rating |</Text>
               <Text>Hour |</Text>
               <Text>Rate</Text>
-            </HStack>
-            <Text maxW="500px">
+            </Stack>
+            <Text
+              maxW={{ sm: "800px", md: "500px" }}
+              fontSize={{ sm: "12px", md: "14px" }}
+            >
               Lorem ipsum dolor sit amet consectetur. Nunc sit eget pharetra ut
               at duis non justo turpis. Enim interdum etiam feugiat egestas.
               Egestas ipsum in egestas tristique eget. Nibh elementum ultrices
@@ -93,6 +102,6 @@ export default function Hero() {
           </Box>
         </Flex>
       </Container>
-    </Box>
+    </Stack>
   );
 }
