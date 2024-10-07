@@ -15,28 +15,32 @@ import MovieCard from "./MovieCard";
 import { TabsData } from "@/app/lib/movie-tab-utils";
 
 import GenreButtons from "./GenreButtons";
- 
-// interface MovieData {
-//   image: string;
-//   year: 
 
-// }
-
-export default function CardMovieSection({ results, genres }: {results : any, genres: any}) {
+export default function CardMovieSection({
+  results,
+  genres,
+}: {
+  results: any;
+  genres: any;
+}) {
   return (
     <Flex
-      gap={"20px"}
+      gap={{ base: "5px", md: "20px" }}
       flexWrap={"wrap"}
       my={"50px"}
-      mx={{ sm: "10px", md: "136px" }}
+      mx={{ base: "2px", md: "136px" }}
     >
       <Tabs my={"51px"}>
         <TabList borderBottom={"1px solid #6A6A6A"}>
           {TabsData.map((datas: any) =>
             datas.TabDetails.map((data: any) => (
-              <Tab color={"white"} key={data.name}>
+              <Tab
+                color={"white"}
+                key={data.name}
+                fontSize={{ base: "8px", md: "18px" }}
+              >
                 <Icon as={data.icon} />
-                <Text ml={{ sm: "5px", md: "10px" }}>{data.name}</Text>
+                <Text ml={{ base: "2px", md: "10px" }}>{data.name}</Text>
               </Tab>
             ))
           )}

@@ -29,17 +29,17 @@ export default function MovieCard({
         <Image
           src={`https://image.tmdb.org/t/p/w500${image}`}
           alt={title}
-          width={{ sm: "122px", md: "182px" }}
-          height={{ sm: "211px", md: "271px" }}
+          width={{ base: "122px", md: "182px" }}
+          height={{ base: "211px", md: "271px" }}
           objectFit={"cover"}
         />
       </Box>
-      <Text color={color} fontSize={{ sm: "10px", md: "13px" }}>
+      <Text color={color} fontSize={{ base: "10px", md: "13px" }}>
         {title.length <= 20 ? title : `${title.slice(0, 19)}...`}
       </Text>
       <Stack
         direction={"row"}
-        spacing={{ sm: "7px", md: "10px" }}
+        spacing={{ base: "7px", md: "10px" }}
         fontSize={"10px"}
       >
         <Text color={"#B4B4B4"}>{year.slice(0, 4)}</Text>

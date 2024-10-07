@@ -11,7 +11,7 @@ export default function ShowMore() {
     >
       <Button
         color={"white"}
-        width={{ sm: "450px", md: "700px", lg: "1140px" }}
+        width={{ base: "450px", md: "700px", lg: "1140px" }}
         bg={"#151515"}
         textAlign={"center"}
         gap={"10px"}

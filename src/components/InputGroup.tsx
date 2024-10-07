@@ -7,7 +7,7 @@ interface InputGroupProps {
 export default function InputGroup({ placeholder }: InputGroupProps) {
   return (
     <Input
-      w={{ sm: "400px", md: "500px" }}
+      w={{ base: "400px", md: "500px" }}
       placeholder={placeholder}
       type={placeholder}
     />

@@ -8,8 +8,7 @@ export default function PlayBtn({ text }: any) {
       color={"white"}
       leftIcon={<FaPlay />}
       colorScheme="blue.700"
-      fontSize={{ sm: "10px", md: "15px" }}
-      boxSize={{sm: "0px"}}
+      fontSize={{ base: "10px", md: "15px" }}
     >
       {text}
     </Button>

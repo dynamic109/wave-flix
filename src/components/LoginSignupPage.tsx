@@ -21,17 +21,17 @@ export default function LoginSignupPage({
     <Flex
       p={"20px"}
       color={"white"}
-      justify={{ sm: "center", md: "space-between" }}
-      direction={{ sm: "column", md: "row" }}
-      gap={{ sm: "40px", md: "10px" }}
+      justify={{ base: "center", md: "space-between" }}
+      direction={{ base: "column", md: "row" }}
+      gap={{ base: "40px", md: "10px" }}
     >
       <Flex
-        display={{ sm: "none", lg: "flex" }}
+        display={{ base: "none", lg: "flex" }}
         direction="column"
         justify={"space-between"}
         className="login-background"
         padding={"40px"}
-        width={{ sm: "80%", md: "50%", lg: "50%" }}
+        width={{ base: "80%", md: "50%", lg: "50%" }}
       >
         <Text width={"200px"}>
           Lights, Camera, Streaming: Your Ultimate Movie Destination!
@@ -66,7 +66,7 @@ export default function LoginSignupPage({
         direction="column"
         justify="center"
         alignItems={"center"}
-        width={{ sm: "100%", md: "40%", lg: "35%" }}
+        width={{ base: "100%", md: "40%", lg: "35%" }}
         m={"auto"}
         gap={"30px"}
         textAlign={"center"}
@@ -91,7 +91,7 @@ export default function LoginSignupPage({
         </HStack>
         <Button
           colorScheme="cyan"
-          w={{ sm: "500px", md: "400px" }}
+          w={{ base: "500px", md: "400px" }}
           bg={"#00ADEF"}
           color={"white"}
         >

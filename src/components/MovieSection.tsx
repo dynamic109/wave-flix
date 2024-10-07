@@ -52,13 +52,13 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
     <Tabs my={"51px"}>
       <TabList
         borderBottom={"1px solid #6A6A6A"}
-        mx={{ sm: "10px", md: "136px" }}
+        mx={{ base: "10px", md: "136px" }}
       >
         {TabsData.map((datas) =>
           datas.TabDetails.map((data) => (
-            <Tab color={"white"} key={data.name}>
+            <Tab color={"white"} key={data.name} fontSize={{ base: "8px", md: "18px" }}>
               <Icon as={data.icon} />
-              <Text ml={{ sm: "5px", md: "10px" }}>{data.name}</Text>
+              <Text ml={{ base: "5px", md: "10px" }}>{data.name}</Text>
             </Tab>
           ))
         )}
@@ -66,13 +66,13 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
 
       <TabPanels mt={"42px"}>
         <TabPanel>
-          <Box mx={{ sm: "10px", md: "136px" }}>
+          <Box mx={{ base: "10px", md: "136px" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists data={results} />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ sm: "10px", md: "136px" }}>
+          <Box mx={{ base: "10px", md: "136px" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists
@@ -80,7 +80,7 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
           />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ sm: "30px", md: "136px" }}>
+          <Box mx={{ base: "30px", md: "136px" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists
@@ -90,7 +90,7 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
           />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ sm: "30px", md: "136px" }}>
+          <Box mx={{ base: "30px", md: "136px" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists data={results} />

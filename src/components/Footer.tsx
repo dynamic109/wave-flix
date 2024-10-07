@@ -21,25 +21,25 @@ export default function Footer() {
   return (
     <Flex
       bg="#151515"
-      p={{ sm: "31px 50px", md: "91px 130px" }}
+      p={{ base: "31px 50px", md: "91px 130px" }}
       direction={"column"}
       gap={"50px"}
     >
       <Flex
-        direction={{ sm: "column", lg: "row" }}
-        justify={{ sm: "center", lg: "space-between" }}
+        direction={{ base: "column", lg: "row" }}
+        justify={{ base: "center", lg: "space-between" }}
       >
         <Flex
           direction={"column"}
           gap={"20px"}
-          justify={{ sm: "center", lg: "flex-start" }}
-          width={{ sm: "100%", lg: "318px" }}
-          mb={{ sm: "30px", lg: "0" }}
+          justify={{ base: "center", lg: "flex-start" }}
+          width={{ base: "100%", lg: "318px" }}
+          mb={{ base: "30px", lg: "0" }}
         >
           <Stack
             display={"flex"}
-            justifyContent={{ sm: "center", lg: "flex-start" }}
-            alignItems={{ sm: "center", lg: "flex-start" }}
+            justifyContent={{ base: "center", lg: "flex-start" }}
+            alignItems={{ base: "center", lg: "flex-start" }}
           >
             <Image src={Logo} alt="wave flix" />
           </Stack>
@@ -47,8 +47,8 @@ export default function Footer() {
             gap={"20px"}
             direction={"row"}
             display={"flex"}
-            justifyContent={{ sm: "center", lg: "flex-start" }}
-            mb={{ sm: "20px", lg: "0" }}
+            justifyContent={{ base: "center", lg: "flex-start" }}
+            mb={{ base: "20px", lg: "0" }}
           >
             <FaInstagram size={28} color="#6A6A6A" />
             <MdOutlineFacebook size={28} color="#6A6A6A" />
@@ -57,12 +57,12 @@ export default function Footer() {
           </Stack>
         </Flex>
         <Flex
-          justify={{ sm: "center", lg: "space-between" }}
+          justify={{ base: "center", lg: "space-between" }}
           gap={"40px"}
-          direction={{ sm: "column", md: "row" }}
+          direction={{ base: "column", md: "row" }}
         >
           <Flex
-            justify={{ sm: "center", lg: "space-between" }}
+            justify={{ base: "center", lg: "space-between" }}
             color={"#B4B4B4"}
             gap={"50px"}
           >
@@ -70,7 +70,7 @@ export default function Footer() {
               <Heading
                 mb={"20px"}
                 color={"white"}
-                fontSize={{ sm: "13px", lg: "18px" }}
+                fontSize={{ base: "13px", lg: "18px" }}
               >
                 About us
               </Heading>
@@ -84,7 +84,7 @@ export default function Footer() {
               <Heading
                 mb={"20px"}
                 color={"white"}
-                fontSize={{ sm: "13px", lg: "18px" }}
+                fontSize={{ base: "13px", lg: "18px" }}
               >
                 For Users
               </Heading>
@@ -97,7 +97,7 @@ export default function Footer() {
               <Heading
                 mb={"20px"}
                 color={"white"}
-                fontSize={{ sm: "13px", lg: "18px" }}
+                fontSize={{ base: "13px", lg: "18px" }}
               >
                 Content
               </Heading>
@@ -109,8 +109,8 @@ export default function Footer() {
           </Flex>
           <Flex
             direction={"column"}
-            justifyContent={{ sm: "center", lg: "flex-start" }}
-            width={{ sm: "100%", lg: "300px" }}
+            justifyContent={{ base: "center", lg: "flex-start" }}
+            width={{ base: "100%", lg: "300px" }}
           >
             <Text color={"#B4B4B4"} mb={"30px"}>
               Sign up with our Newsletter

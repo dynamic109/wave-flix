@@ -12,7 +12,7 @@ export default function RecentMovie() {
       <Stack
         className="recent-movie-background"
         maxW={"1100px"}
-        padding={{ sm: "30px", md: "70px" }}
+        padding={{ base: "30px", md: "70px" }}
         color={"white"}
         spacing={"50px"}
       >
@@ -43,7 +43,7 @@ export default function RecentMovie() {
             />
           ))}
         </Stack>
-        <Stack maxW={{ sm: "400px", md: "644px" }}>
+        <Stack maxW={{ base: "400px", md: "644px" }}>
           <Heading>House of the Dragon</Heading>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
@@ -53,8 +53,8 @@ export default function RecentMovie() {
           </Text>
         </Stack>
         <Flex
-          direction={{ sm: "column", md: "row" }}
-          justifyContent={{ sm: "center", md: "space-between" }}
+          direction={{ base: "column", md: "row" }}
+          justifyContent={{ base: "center", md: "space-between" }}
           gap={"10px"}
         >
           <Flex gap={"15px"}>
