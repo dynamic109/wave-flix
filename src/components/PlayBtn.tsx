@@ -10,7 +10,7 @@ export default function PlayBtn({ text }: any) {
       color="white"
       bg="#00ADEF"
       leftIcon={<FaPlay />}
-      fontSize={{ base: "10px", md: "20px" }}
+      fontSize={{ base: "14px", md: "20px" }}
       fontWeight={"400"}
     >
       {text}

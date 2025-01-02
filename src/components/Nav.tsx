@@ -22,14 +22,15 @@ export default function Nav() {
     <Flex
       mb={"300px"}
       py={"10px"}
-      pl={"70px"}
-      w="90%"
       pos={"absolute"}
       as="nav"
       alignItems="center"
       color="white"
+      w={"full"}
     >
       <HStack
+        w="90%"
+        pl={"70px"}
         color={"#B4B4B4"}
         lineHeight={"24px"}
         spacing="20px"
@@ -59,8 +60,16 @@ export default function Nav() {
         />
       </AvatarGroup>
 
-      <Flex display={["flex", "flex", "none", "none"]}>
-        <Icon as={IoMenu} />
+      <Flex
+        w={"100%"}
+        mx={"auto"}
+        px={"10px"}
+        display={["flex", "flex", "none", "none"]}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
+        <Image src={Logo} alt="Wave Flix logo" w="111px" h="48px" />
+        <Icon as={IoMenu} w="30px" h="30px" />
       </Flex>
     </Flex>
   );

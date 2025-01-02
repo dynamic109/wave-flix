@@ -8,22 +8,26 @@ function MovieLists({ data }: any) {
   return (
     <>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={2}
         centeredSlides={false}
-        spaceBetween={30}
+        spaceBetween={10}
         grabCursor={true}
         modules={[Pagination]}
         breakpoints={{
           // Responsive breakpoints
-          640: {
-            slidesPerView: 4,
+          425: {
+            slidesPerView: 3,
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 20,
           },
           1024: {
+            slidesPerView: 6,
+            spaceBetween: 30,
+          },
+          1440: {
             slidesPerView: 7,
             spaceBetween: 30,
           },

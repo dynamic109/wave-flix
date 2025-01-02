@@ -32,7 +32,7 @@ interface MovieSectionProps {
   TabsData: {
     TabDetails: {
       name: string;
-      icon: IconType; // Specify a more precise type if possible
+      icon: IconType;
     }[];
   }[];
   genres: Genre[];
@@ -52,19 +52,28 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
     <Tabs my={"51px"}>
       <TabList
         borderBottom={"1px solid #6A6A6A"}
-        mx={{ base: "10px", md: "136px" }}
+        mx={{ base: "8px", md: "50px" }}
+        textAlign={"center"}
       >
         {TabsData.map((datas) =>
           datas.TabDetails.map((data) => (
-            <Tab color={"white"} key={data.name} fontSize={{ base: "8px", md: "18px" }}>
-              <Icon as={data.icon} />
-              <Text ml={{ base: "5px", md: "10px" }}>{data.name}</Text>
+            <Tab
+              px={{ base: "2", md: "5" }}
+              color={"white"}
+              key={data.name}
+              fontWeight={"600"}
+              fontSize={{ base: "10px", md: "18px" }}
+            >
+              <Box display={"flex"} alignItems={"center"}>
+                <Icon as={data.icon} />
+                <Text ml={{ base: "3px", md: "10px" }}>{data.name}</Text>
+              </Box>
             </Tab>
           ))
         )}
       </TabList>
 
-      <TabPanels mt={"42px"}>
+      <TabPanels mt={"5px"}>
         <TabPanel>
           <Box mx={{ base: "10px", md: "136px" }}>
             <GenreButtons genresData={genres} />

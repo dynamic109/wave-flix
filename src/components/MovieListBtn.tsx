@@ -9,7 +9,7 @@ export default function MovieListBtn() {
       color="white"
       colorScheme="white"
       bg="transparent"
-      fontSize={{ base: "10px", md: "20px" }}
+      fontSize={{ base: "14px", md: "20px" }}
       fontWeight={"400"}
       leftIcon={<FiPlus />}
     >

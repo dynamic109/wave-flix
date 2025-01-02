@@ -35,9 +35,11 @@ export default function CardMovieSection({
           {TabsData.map((datas: any) =>
             datas.TabDetails.map((data: any) => (
               <Tab
+                px={{ base: "2", md: "5" }}
                 color={"white"}
                 key={data.name}
-                fontSize={{ base: "8px", md: "18px" }}
+                fontWeight={"600"}
+                fontSize={{ base: "10px", md: "18px" }}
               >
                 <Icon as={data.icon} />
                 <Text ml={{ base: "2px", md: "10px" }}>{data.name}</Text>
@@ -46,7 +48,7 @@ export default function CardMovieSection({
           )}
         </TabList>
 
-        <TabPanels mt={"42px"}>
+        <TabPanels mt={"5px"}>
           <TabPanel>
             <Box>
               <GenreButtons genresData={genres} />

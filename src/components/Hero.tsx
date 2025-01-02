@@ -54,16 +54,21 @@ export default function Hero() {
 
           <Spacer />
 
-          <Stack fontSize={{ base: "10px", md: "16px" }} gap={"10px"}>
+          <Stack fontSize={{ base: "14px", md: "16px" }} gap={"10px"}>
             <Text color={"#B4B4B4"}>ACTION - SCIENCE FICTION</Text>
             <Heading
               fontFamily={"New Amsterdam"}
               letterSpacing={"widest"}
-              fontSize={{ base: "18px", md: "50px" }}
+              fontSize={{ base: "28px", md: "50px" }}
             >
               PACIFIC RIM
             </Heading>
-            <Stack color={"#B4B4B4"} direction={"row"} fontWeight={"semibold"}>
+            <Stack
+              color={"#B4B4B4"}
+              alignItems={"center"}
+              direction={"row"}
+              fontWeight={"semibold"}
+            >
               <Text>2013 |</Text>
               <Text
                 w={"24px"}
@@ -75,7 +80,12 @@ export default function Hero() {
                 12
               </Text>
               <Text>| 2h 11min |</Text>
-              <Image src={RatingImg} alt="Rating" />
+              <Box
+                w={{ base: "70px", md: "144px" }}
+                h={{ base: "15px", md: "24px" }}
+              >
+                <Image src={RatingImg} alt="Rating" />
+              </Box>
             </Stack>
             <Text maxW={{ base: "800px", md: "500px" }}>
               Lorem ipsum dolor sit amet consectetur. Nunc sit eget pharetra ut
@@ -99,7 +109,7 @@ export default function Hero() {
               bg="transparent"
               w={{ base: "fit-content", md: "222px" }}
               h={{ base: "30px", md: "66px" }}
-              fontSize={{ base: "10px", md: "20px" }}
+              fontSize={{ base: "14px", md: "20px" }}
               borderRadius={"0"}
               gap="10px"
               leftIcon={<FaPlay />}
