@@ -1,6 +1,8 @@
 "use client";
 
 import { SearchIcon } from "@chakra-ui/icons";
+import RatingImg from "../../public/images/rating-group.svg";
+import Image from "next/image";
 import {
   Flex,
   Input,
@@ -10,34 +12,32 @@ import {
   HStack,
   Heading,
   Text,
-  Button,
   Box,
   Container,
   Stack,
 } from "@chakra-ui/react";
+import { Button } from "./ui/button";
 import { FaPlay } from "react-icons/fa";
-import Nav from "./Nav";
-import SideBar from "./SideBar";
 import PlayBtn from "./PlayBtn";
 import MovieListBtn from "./MovieListBtn";
 
 export default function Hero() {
   return (
     <Stack
-      pb={{ base: "10px", md: "50px" }}
+      pb={{ base: "10px", md: "20px" }}
+      px={{ base: "0px", md: "50px" }}
+      h={"fit-content"}
       className="background-image"
       direction="column"
     >
-      <Nav />
-      <SideBar />
       <Container maxWidth={{ base: "100%", md: "1500px" }}>
         <Flex
-          gap={"20px"}
-          py={{ base: "80px", md: "120px" }}
+          gap={{ base: "10px", md: "30px" }}
+          py={{ base: "80px", md: "100px" }}
           direction="column"
-          h={{ base: "max-content", md: "350px" }}
+          h={{ base: "fit-content" }}
           color="white"
-          px={{ base: "50px", md: "60px" }}
+          px={{ base: "10px", md: "20px", lg: "40px" }}
         >
           <InputGroup
             gap={"14px"}
@@ -54,10 +54,8 @@ export default function Hero() {
 
           <Spacer />
 
-          <Stack>
-            <Text fontSize={{ base: "5px", md: "14px" }}>
-              ACTION - SCIENCE FICTION
-            </Text>
+          <Stack fontSize={{ base: "10px", md: "16px" }} gap={"10px"}>
+            <Text color={"#B4B4B4"}>ACTION - SCIENCE FICTION</Text>
             <Heading
               fontFamily={"New Amsterdam"}
               letterSpacing={"widest"}
@@ -65,16 +63,21 @@ export default function Hero() {
             >
               PACIFIC RIM
             </Heading>
-            <Stack direction={"row"} fontSize={{ base: "10px", md: "14px" }}>
-              <Text>Year |</Text>
-              <Text>Rating |</Text>
-              <Text>Hour |</Text>
-              <Text>Rate</Text>
+            <Stack color={"#B4B4B4"} direction={"row"} fontWeight={"semibold"}>
+              <Text>2013 |</Text>
+              <Text
+                w={"24px"}
+                h={"24px"}
+                textAlign={"center"}
+                bg={"yellow.300"}
+                color={"white"}
+              >
+                12
+              </Text>
+              <Text>| 2h 11min |</Text>
+              <Image src={RatingImg} alt="Rating" />
             </Stack>
-            <Text
-              maxW={{ base: "800px", md: "500px" }}
-              fontSize={{ base: "12px", md: "14px" }}
-            >
+            <Text maxW={{ base: "800px", md: "500px" }}>
               Lorem ipsum dolor sit amet consectetur. Nunc sit eget pharetra ut
               at duis non justo turpis. Enim interdum etiam feugiat egestas.
               Egestas ipsum in egestas tristique eget. Nibh elementum ultrices
@@ -83,7 +86,7 @@ export default function Hero() {
               morbi.
             </Text>
             <HStack>
-              <PlayBtn text={"Play"} />
+              <PlayBtn text={"PLAY"} />
               <MovieListBtn />
             </HStack>
           </Stack>
@@ -91,9 +94,13 @@ export default function Hero() {
           <Spacer />
           <Box>
             <Button
+              textAlign={"start"}
               color="white"
-              colorScheme="skyblue"
               bg="transparent"
+              w={{ base: "fit-content", md: "222px" }}
+              h={{ base: "30px", md: "66px" }}
+              fontSize={{ base: "10px", md: "20px" }}
+              borderRadius={"0"}
               gap="10px"
               leftIcon={<FaPlay />}
             >

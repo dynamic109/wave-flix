@@ -25,10 +25,7 @@ async function Home() {
         TabsData={SecondTabsData}
         genres={genres}
       />
-      <CardMovieSection
-        results={results}
-        genres={genres}
-      />
+      <CardMovieSection results={results} genres={genres} />
       <RecentMovie />
       <ShowMore />
       <Footer />

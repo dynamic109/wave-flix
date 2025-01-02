@@ -1,6 +1,7 @@
 "use client";
 
 import { Image } from "@chakra-ui/next-js";
+// import JaoImg from "@/public/images/jao.png"
 import {
   Avatar,
   AvatarGroup,
@@ -50,7 +51,12 @@ export default function Nav() {
           icon={<AiOutlineUser fontSize="1.5rem" />}
         />
         <Text>João M</Text>
-        <Avatar w="32px" h="32px" src="" name="João M" />
+        <Avatar
+          w="32px"
+          h="32px"
+          src="../../public/images/jao.png"
+          name="João M"
+        />
       </AvatarGroup>
 
       <Flex display={["flex", "flex", "none", "none"]}>
