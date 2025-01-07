@@ -24,6 +24,8 @@ import MovieListBtn from "./MovieListBtn";
 export default function Hero() {
   return (
     <Stack
+      maxWidth={"1440px"}
+      mx={"auto"}
       pb={{ base: "10px", md: "20px" }}
       px={{ base: "0px", md: "50px" }}
       h={"fit-content"}

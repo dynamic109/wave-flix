@@ -20,6 +20,8 @@ import { VscGithub } from "react-icons/vsc";
 export default function Footer() {
   return (
     <Flex
+      maxWidth={"1440px"}
+      mx={"auto"}
       bg="#151515"
       p={{ base: "31px 50px", md: "91px 130px" }}
       direction={"column"}

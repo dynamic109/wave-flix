@@ -22,13 +22,13 @@ export default function GenreButtons({ genresData }: any) {
       alignItems={"center"}
     >
       <HStack display={{ base: "none", md: "flex" }}>
-        {genresData?.genres.slice(0, 6).map((genre: any) => (
+        {genresData?.genres.slice(0, 5).map((genre: any) => (
           <Flex flexDir={"row"} key={genre.id} mb={"20px"}>
             <Button
               p={{ base: "0px 20px", md: "6px 40px" }}
               borderRadius={"64"}
               fontSize={"12px"}
-              mr={{ base: "10px", md: "25px" }}
+              mr={{ base: "10px", md: "5px" }}
               bg={"#151515"}
               color={"#FDFDFD"}
               fontWeight={"400"}
@@ -46,7 +46,7 @@ export default function GenreButtons({ genresData }: any) {
               p={{ base: "3px auto" }}
               borderRadius={"64"}
               fontSize={"12px"}
-              mr={{ base: "4px",}}
+              mr={{ base: "4px" }}
               bg={"#151515"}
               color={"#FDFDFD"}
             >
@@ -83,7 +83,7 @@ export default function GenreButtons({ genresData }: any) {
           spacing={4}
           mt={4}
         >
-          {genresData?.genres.slice(6).map((genre: any) => (
+          {genresData?.genres.slice(5).map((genre: any) => (
             <Flex flexDir={"row"} w={"100%"} key={genre.id} mb={"20px"}>
               <Button
                 p={{ base: "3px 20px", md: "6px 40px" }}

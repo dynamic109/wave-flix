@@ -28,7 +28,8 @@ export default function CardMovieSection({
       gap={{ base: "5px", md: "20px" }}
       flexWrap={"wrap"}
       my={"50px"}
-      mx={{ base: "2px", md: "136px" }}
+      maxWidth={"1440px"}
+      mx={{ base: "0px", md: "10px", xl: "auto" }}
     >
       <Tabs my={"51px"}>
         <TabList borderBottom={"1px solid #6A6A6A"}>
@@ -57,6 +58,7 @@ export default function CardMovieSection({
               {results.map((movie: any, index: number) => (
                 <MovieCard
                   key={index}
+                  // w={"100%"}
                   color={"white"}
                   image={movie.poster_path}
                   title={movie.title}
@@ -70,7 +72,7 @@ export default function CardMovieSection({
             <Box>
               <GenreButtons genresData={genres} />
             </Box>
-            <Flex justifyContent={"space-evenly"} flexWrap={"wrap"}>
+            <Flex gap={"5px"} justifyContent={"space-evenly"} flexWrap={"wrap"}>
               {results.map((movie: any, index: number) => (
                 <MovieCard
                   key={index}

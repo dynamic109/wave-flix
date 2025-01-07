@@ -29,7 +29,7 @@ export default function MovieCard({
         <Image
           src={`https://image.tmdb.org/t/p/w500${image}`}
           alt={title}
-          width={{ base: "122px", md: "182px" }}
+          width={{ base: "138px", md: "182px" }}
           height={{ base: "211px", md: "271px" }}
           objectFit={"cover"}
         />

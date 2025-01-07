@@ -8,6 +8,8 @@ export default function ShowMore() {
       justifyContent={"center"}
       alignItems={"center"}
       my={"40px"}
+      maxWidth={"1440px"}
+      mx={"auto"}
     >
       <Button
         color={"white"}

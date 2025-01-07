@@ -8,7 +8,7 @@ import MovieListBtn from "./MovieListBtn";
 
 export default function RecentMovie() {
   return (
-    <Flex justifyContent={"center"} alignItems={"center"}>
+    <Flex maxWidth={"1440px"} mx={"auto"}  justifyContent={"center"} alignItems={"center"}>
       <Stack
         className="recent-movie-background"
         maxW={"1100px"}

@@ -49,7 +49,7 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
   }
 
   return (
-    <Tabs my={"51px"}>
+    <Tabs maxWidth={"1440px"} mx={"auto"} my={"51px"}>
       <TabList
         borderBottom={"1px solid #6A6A6A"}
         mx={{ base: "8px", md: "50px" }}
@@ -75,13 +75,13 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
 
       <TabPanels mt={"5px"}>
         <TabPanel>
-          <Box mx={{ base: "10px", md: "136px" }}>
+          <Box w={"full"} mx={{ base: "auto" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists data={results} />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ base: "10px", md: "136px" }}>
+          <Box w={"full"} mx={{ base: "auto" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists
@@ -89,7 +89,7 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
           />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ base: "30px", md: "136px" }}>
+          <Box w={"full"} mx={{ base: "auto" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists
@@ -99,7 +99,7 @@ const MovieSection = ({ results, TabsData, genres }: MovieSectionProps) => {
           />
         </TabPanel>
         <TabPanel>
-          <Box mx={{ base: "30px", md: "136px" }}>
+          <Box w={"full"} mx={{ base: "auto" }}>
             <GenreButtons genresData={genres} />
           </Box>
           <MovieLists data={results} />
