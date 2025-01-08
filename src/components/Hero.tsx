@@ -32,7 +32,7 @@ export default function Hero() {
       className="background-image"
       direction="column"
     >
-      <Container maxWidth={{ base: "100%", md: "1500px" }}>
+      <Container maxWidth={{ base: "100%", md: "1440px" }}>
         <Flex
           gap={{ base: "10px", md: "30px" }}
           py={{ base: "80px", md: "100px" }}
