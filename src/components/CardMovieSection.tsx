@@ -58,12 +58,12 @@ export default function CardMovieSection({
               {results.map((movie: any, index: number) => (
                 <MovieCard
                   key={index}
-                  // w={"100%"}
                   color={"white"}
                   image={movie.poster_path}
                   title={movie.title}
                   year={movie.release_date}
                   rate={movie.vote_average}
+                  id={movie.id}
                 />
               ))}
             </Flex>
@@ -81,6 +81,7 @@ export default function CardMovieSection({
                   title={movie.title}
                   year={movie.release_date}
                   rate={movie.vote_average}
+                  id={movie.id}
                 />
               ))}
             </Flex>
@@ -98,6 +99,7 @@ export default function CardMovieSection({
                   title={movie.title}
                   year={movie.release_date}
                   rate={movie.vote_average}
+                  id={movie.id}
                 />
               ))}
             </Flex>
@@ -115,6 +117,7 @@ export default function CardMovieSection({
                   title={movie.title}
                   year={movie.release_date}
                   rate={movie.vote_average}
+                  id={movie.id}
                 />
               ))}
             </Flex>

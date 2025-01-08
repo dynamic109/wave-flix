@@ -1,8 +1,9 @@
 "use client";
-import { Box, Stack, Text, Image, Link } from "@chakra-ui/react";
+import { Box, Stack, Text, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
+import Link from "next/link";
 
 export default function MovieCard({
   image,
@@ -11,13 +12,21 @@ export default function MovieCard({
   color,
   rate,
   id,
+  overview,
+  popularity,
+  language,
+  genreIds,
 }: {
   image: string;
   title: string;
-  year: any;
+  year: string;
   color: string;
   rate: number;
   id: number;
+  overview: string;
+  popularity: number;
+  language: string;
+  genreIds: number[];
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -38,12 +47,10 @@ export default function MovieCard({
           />
         </Box>
       </Link>
-      <Link
-        href={`/movie/details/${id}`}
-        color={color}
-        fontSize={{ base: "10px", md: "13px" }}
-      >
-        {title.length <= 20 ? title : `${title.slice(0, 19)}...`}
+      <Link href={`/movies/${id}`}>
+        <Text color={color} fontSize={{ base: "10px", md: "13px" }}>
+          {title.length <= 20 ? title : `${title.slice(0, 19)}...`}
+        </Text>
       </Link>
       <Stack
         direction={"row"}

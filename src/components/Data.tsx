@@ -42,6 +42,10 @@ function MovieLists({ data }: any) {
               title={movie.title}
               year={movie.release_date}
               rate={movie.vote_average}
+              popularity={movie.popularity}
+              language={movie.original_language}
+              genreIds={movie.genre_ids}
+              overview={movie.overview}
               id={movie.id}
             />
           </SwiperSlide>
