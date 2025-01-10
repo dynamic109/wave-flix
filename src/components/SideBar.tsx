@@ -7,6 +7,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { FaChromecast } from "react-icons/fa";
 import { TbSmartHome } from "react-icons/tb";
 import { IoMenu } from "react-icons/io5";
+import Link from "next/link";
 const IconsArr = [
   {
     id: 1,
@@ -43,11 +44,14 @@ export default function SideBar() {
       justify="space-between"
       gap={{ base: "20px", md: "30px" }}
       mt={"70px"}
+      px={"10px"}
     >
       {IconsArr?.map((icon) => (
         <Flex key={icon.id}>
           <VStack spacing="20px">
-            <Icon h="26px" w="26px" color="white" as={icon.name} />
+            <Link href={"/"}>
+              <Icon h="26px" w="26px" color="white" as={icon.name} />
+            </Link>
           </VStack>
         </Flex>
       ))}

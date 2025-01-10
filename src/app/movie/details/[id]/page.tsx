@@ -1,21 +1,27 @@
 import {
   Box,
-  Container,
+  Stack,
   Flex,
   Heading,
   Image,
-  Stack,
+  Spacer,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import SideBar from "@/components/SideBar";
-import { getMovie, getGenre } from "@/app/lib/get-services"; // Adjust the import path as needed
+import { getMovie, getGenre } from "@/app/lib/get-services";
+
+interface PageParams {
+  id: string;
+}
+
+interface MovieDetailsPageProps {
+  params: PageParams;
+}
 
 export default async function MoviesDetailsPage({
   params,
-}: {
-  params: { id: string };
-}) {
+}: MovieDetailsPageProps) {
   const movieData = await getMovie();
   const genreData = await getGenre();
 
@@ -39,33 +45,51 @@ export default async function MoviesDetailsPage({
           src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
           alt={`${movie.title} backdrop`}
           width="100%"
-          height="300px"
+          height="500px"
           objectFit="cover"
         />
-        <Container maxW="container.xl" mt={-10} position="relative">
-          <Flex>
+        <Stack
+          maxW="1440px"
+          mx={"auto"}
+          mt={-40}
+          position="relative"
+          gap={"20px"}
+        >
+          <Flex
+            px={"140px"}
+            w={"full"}
+            alignItems={"center"}
+            justify={"space-between"}
+          >
+            <Heading as="h1" fontSize="40px">
+              {movie.title}
+            </Heading>
+            <Box>
+              <Text>{movie.release_date}</Text>
+            </Box>
+          </Flex>
+          <Spacer />
+          <Flex px={"140px"} bg="black" w={"full"} align="center">
             <Image
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={`${movie.title} poster`}
               width="200px"
               borderRadius="md"
               boxShadow="lg"
+              // mt={-10}
             />
-            <VStack align="start" ml={6} spacing={4}>
-              <Heading as="h1" size="2xl">
-                {movie.title}
-              </Heading>
+            <VStack align="start" ml={6} spacing={3}>
+              <Text fontSize="lg">{movie.title}</Text>
+              <Text fontSize="lg">{genres.join(" - ").toUpperCase()}</Text>
               <Text fontSize="lg">{movie.overview}</Text>
-              <Stack direction="row" spacing={4}>
+              <Stack>
                 <Text>Popularity: {movie.popularity.toFixed(1)}</Text>
-                <Text>Release Date: {movie.release_date}</Text>
                 <Text>Language: {movie.original_language.toUpperCase()}</Text>
+                <Text>Rating: {movie.vote_average.toFixed(1)}</Text>
               </Stack>
-              <Text>Genres: {genres.join(", ")}</Text>
-              <Text>Rating: {movie.vote_average.toFixed(1)}</Text>
             </VStack>
           </Flex>
-        </Container>
+        </Stack>
       </Box>
     </Flex>
   );
